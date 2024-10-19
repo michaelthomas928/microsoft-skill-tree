@@ -5,11 +5,9 @@ document.addEventListener('DOMContentLoaded', () => {
     const endSelect = document.getElementById('end');
 
     const tree = {
-        "onboard": ["conditional-access", "teams", "defender-endpoint", "purview"],
-        "conditional-access": ["mfa", "defender-cloud"],
+        "onboard": ["exchange-online", "sharepoint", "intune", "teams", "defender-endpoint", "office-apps", "purview"],
         "teams": ["teams-phone", "teams-premium"],
-        "defender-endpoint": ["defender-identity"],
-        "purview": ["ediscovery", "insider-risk"]
+        "defender-endpoint": ["defender-cloud", "defender-identity"]
     };
 
     findPathButton.addEventListener('click', () => {

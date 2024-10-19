@@ -3,48 +3,48 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Microsoft 365 E5 Interactive Skill Tree</title>
+    <title>Microsoft 365 E5 Suite Skill Tree</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <div class="container">
-        <h1>Microsoft 365 E5 Suite Skill Tree</h1>
+        <h1>Microsoft 365 E5 Skill Tree</h1>
         <div class="controls">
             <label for="start">Select Start:</label>
             <select id="start">
                 <option value="onboard">Onboard Microsoft Entra ID</option>
-                <option value="conditional-access">Conditional Access</option>
-                <option value="teams">Microsoft Teams</option>
+                <option value="exchange-online">Exchange Online</option>
+                <option value="intune">Endpoint Manager (Intune)</option>
             </select>
 
             <label for="end">Select End:</label>
             <select id="end">
-                <option value="mfa">MFA</option>
-                <option value="defender-identity">Defender for Identity</option>
-                <option value="ediscovery">eDiscovery</option>
+                <option value="purview">Microsoft Purview</option>
+                <option value="defender-cloud">Defender for Cloud Apps</option>
+                <option value="teams-premium">Teams Premium</option>
             </select>
 
             <button id="find-path">Find Path</button>
         </div>
+
         <div class="tree">
             <div class="node" id="onboard">Onboard Microsoft Entra ID</div>
             <div class="branch">
-                <div class="node" id="conditional-access" data-parent="onboard">Conditional Access</div>
-                <div class="branch">
-                    <div class="node" id="mfa" data-parent="conditional-access">MFA</div>
-                </div>
+                <div class="node" id="exchange-online" data-parent="onboard">Exchange Online</div>
+                <div class="node" id="sharepoint" data-parent="onboard">SharePoint Online</div>
+                <div class="node" id="intune" data-parent="onboard">Endpoint Manager (Intune)</div>
                 <div class="node" id="teams" data-parent="onboard">Microsoft Teams</div>
                 <div class="branch">
                     <div class="node" id="teams-phone" data-parent="teams">Teams Phone</div>
                     <div class="node" id="teams-premium" data-parent="teams">Teams Premium</div>
                 </div>
                 <div class="node" id="defender-endpoint" data-parent="onboard">Defender for Endpoint</div>
-                <div class="node" id="defender-identity" data-parent="defender-endpoint">Defender for Identity</div>
-                <div class="node" id="purview" data-parent="onboard">Microsoft Purview</div>
                 <div class="branch">
-                    <div class="node" id="ediscovery" data-parent="purview">eDiscovery</div>
-                    <div class="node" id="insider-risk" data-parent="purview">Insider Risk Management</div>
+                    <div class="node" id="defender-cloud" data-parent="defender-endpoint">Defender for Cloud Apps</div>
+                    <div class="node" id="defender-identity" data-parent="defender-endpoint">Defender for Identity</div>
                 </div>
+                <div class="node" id="office-apps" data-parent="onboard">Office Apps</div>
+                <div class="node" id="purview" data-parent="onboard">Microsoft Purview</div>
             </div>
         </div>
     </div>
