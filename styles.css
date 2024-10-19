@@ -1,57 +1,49 @@
 body {
     font-family: Arial, sans-serif;
     background-color: #f5f5f5;
+    margin: 0;
+    padding: 0;
+    height: 100vh;
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
-    height: 100vh;
-    margin: 0;
+    justify-content: center;
 }
 
 .container {
     text-align: center;
 }
 
-.controls {
+.core-pillars {
+    display: flex;
+    justify-content: space-around;
+    width: 80%;
     margin-bottom: 20px;
 }
 
-.tree {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 15px;
+.pillar {
+    font-size: 1.5em;
+    font-weight: bold;
+    color: #333;
 }
 
-.branch {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 10px;
+.lattice {
+    width: 80%;
+    height: 60vh;
+}
+
+.line {
+    stroke: #aaa;
+    stroke-width: 2;
 }
 
 .node {
-    padding: 10px 20px;
-    background-color: #ddd;
-    border-radius: 20px;
+    fill: #ddd;
     cursor: pointer;
-    opacity: 0.5;
-    pointer-events: none;
-    transition: all 0.3s ease;
-}
-
-.node.active {
-    background-color: #4CAF50;
-    color: white;
-    opacity: 1;
-    pointer-events: auto;
-}
-
-.node.highlight {
-    background-color: #32CD32;
+    transition: transform 0.3s, fill 0.3s;
 }
 
 .node:hover {
     transform: scale(1.1);
+    fill: #1e90ff;
 }
